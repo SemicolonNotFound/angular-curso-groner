@@ -1,0 +1,29 @@
+<h3>Two-way data binding</h3>
+<div>
+  <em> value e (input) serão usados juntos dentro do ngModel</em>
+  <br />
+  <em>
+    ngModel cria o two-way binding que referencia do component para o template e
+    vice-versa. Ele também precisa do import do FormsModule para funcionar</em
+  >
+  <br />
+  <input type="text" [value]="nome" (input)="nome = $event.target.value" />
+  <input type="text" [(ngModel)]="nome" />
+
+  <p>Você digitou: {{ nome }}</p>
+</div>
+<div>
+  <em>
+    Interpolation pode trazer também informações de um objeto (isso era
+    óbvio).</em
+  >
+  <br />
+  <em>
+    Two-way funciona para referenciar objetos também seguindo a ordem que foram
+    declarados.</em
+  >
+  <br />
+  <input type="text" [(ngModel)]="pessoa.nome" />
+  <input type="text" [(ngModel)]="pessoa.idade" />
+  <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos.</p>
+</div>

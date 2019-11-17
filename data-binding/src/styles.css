@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+em {
+  margin: 10px 0px 10px 5px;
+  border-left: 10px solid #00ac64;
+  background-color: #6fa38f8e;
+  border-radius: 20px;
+  padding: 3px;
+}
