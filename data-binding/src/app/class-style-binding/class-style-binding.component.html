@@ -1,0 +1,64 @@
+<article>
+  <h3>Class e Style Binding</h3>
+  <div>
+    Selecione uma classe
+    <!-- #classe significa uma variável local. classe é apenas como a chamamos, poderia ser qualquer outra coisa -->
+    <select #classe (change)="(0)">
+      <option value="alert-success">Sucesso</option>
+      <option value="alert-info">Info</option>
+      <option value="alert-warning">Alerta</option>
+      <option value="alert-danger">Erro</option>
+    </select>
+
+    <!-- Class binding pega a informação [class.alert-sucess] se o nosso #classe q é o select tiver o valor alert-sucess selecionado. -->
+    <div
+      class="alert"
+      role="alert"
+      [class.alert-success]="classe.value == 'alert-success'"
+    >
+      Sucesso
+    </div>
+
+    <!-- Acontece o mesmo, mas com info -->
+
+    <div
+      class="alert"
+      role="alert"
+      [class.alert-info]="classe.value == 'alert-info'"
+    >
+      Info
+    </div>
+
+    <!-- Acontece o mesmo, mas com warning -->
+    <div
+      class="alert"
+      role="alert"
+      [class.alert-warning]="classe.value == 'alert-warning'"
+    >
+      Alerta
+    </div>
+
+    <!-- Acontece o mesmo, mas com danger -->
+    <div
+      class="alert"
+      role="alert"
+      [class.alert-danger]="classe.value == 'alert-danger'"
+    >
+      Erro
+    </div>
+
+    <!-- Usamos o interpolation para apresentar o valor que está selecionado no select. -->
+    <div class="alert {{classe.value }}" role="alert">
+      Texto colorido conforme o que for selecionado.
+    </div>
+
+    <!-- Usamos o property binding de style.display q controla o estilo e aplicamos o classe.value caso ele seja alert-danger com um if ternário para aparecer ou não -->
+    <div
+      class="alert alert-danger"
+      role="alert"
+      [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'"
+    >
+      Aparece apenas em caso de erro.
+    </div>
+  </div>
+</article>
