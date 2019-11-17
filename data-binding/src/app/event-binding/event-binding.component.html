@@ -1,0 +1,22 @@
+<article>
+  <h3>Event Binding</h3>
+  <div>
+    <button class="btn btn-primary" (click)="botaoClicado()">
+      Clique Aqui
+    </button>
+
+    <!-- Tudo que está entre (parenteses) é um Event Binding. É uma ação que será executada, um evento. -->
+    <input
+      #campoInput
+      (keyup)="onKeyUp($event)"
+      (keyup.enter)="salvarValor($event.target.value)"
+      (blur)="salvarValor(campoInput.value)"
+      type="text"
+    />
+    <p>Valor atual: {{ valorAtual }}</p>
+    <p>Valor salvo: {{ valorSalvo }}</p>
+
+    <span (mouseover)="OnMouseOverOut()" (mouseout)="OnMouseOverOut()"
+    [class.highlight]="isMouseOver" >Passe o mouse aqui</span>
+  </div>
+</article>
