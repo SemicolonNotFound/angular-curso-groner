@@ -1,0 +1,9 @@
+<h5>Diretiva *ngFor</h5>
+
+<ul>
+  <!-- Para cada item do loop ele irá iterar dentro de um li.  -->
+  <li *ngFor="let curso of cursos; let i = index">
+    <!-- Pego item a item e exibo colocando também o valor do index (+1) pois o array começa em 0 -->
+    {{ i + 1 }} - {{ curso }}
+  </li>
+</ul>

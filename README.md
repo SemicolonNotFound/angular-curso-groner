@@ -53,3 +53,10 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
 
 - Executa semelhante ao condicional If que conhecemos. Ira iterar o valor da tag em que for declarado e o executará caso a condição for verdadeira.
 - Se você tiver uma árvore de elementos pequena para exibir, pode usar o elemento [hidden] como alternativa para não sobrecarregar o DOM. Caso passar de 2/3 utilizar ngIf.
+- Usa-se \*ngIf="condition" para adicionar essa diretiva.
+
+### Diretiva \*ngFor
+
+- Executa semelhante ao laço de repetição 'for' que conhecemos. Ira repetir o laço para cada item presente no meu array.
+- Podemos então exibir item a item o que foi passado pelo laço. Por ex: let item of itens; e colocamos {{ item }} para mostrar todos os itens por vez.
+- Usa-se \*ngFor="let item of items" para criar o laço de repetição. Pode ser aplicado a várias tags, no exemplo usamos um <li>
