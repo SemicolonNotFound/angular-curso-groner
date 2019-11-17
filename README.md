@@ -44,7 +44,7 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
   Ex: @Output() outputProperty = new EventEmitter(); Declaramos uma variável 'valor = 0;' Agora podemos repassar o valor que está sendo recebido aqui para nosso component.
 - Teremos um método então chamando isso. meuMetodo() {this.mudouValor.emit({novoValor: this.valor})}
 
-## Diretivas
+## Directives / Diretivas
 
 - Diretivas Estruturais: São utilizadas para modificar o DOM. (Alterar nosso template) - *ngIf, *ngFor & etc.
 - Diretivas de Atributos: Interagem com o elemento em que foram aplicadas. Por ex. Modificar a classe de objetos e classes. - ng-class, ng-style.
@@ -73,9 +73,21 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
   Ex: {{ pessoa.fisica?.endereco?.rua }} como é possivel ver, tem como usá-lo mais de uma vez e aninhar isso em tudo q é recebido.
 
 ### Funcionamento do ng-content
+
 - Serve com um container de conteúdo que será sobreescrito pelo componente pai.
-Ex: em <app-root> eu declaro meu selector '<app-ng-content>Conteúdo que aparece no ng-content</app-ng-content>' e dentro da tag repasso meu texto de informação.
+  Ex: em <app-root> eu declaro meu selector '<app-ng-content>Conteúdo que aparece no ng-content</app-ng-content>' e dentro da tag repasso meu texto de informação.
 - Agora, dentro do template do <app-ng-content> eu adiciono um <ng-content></ng-content>. Meu conteúdo por final aparecerá entre essas tags do ng-content.
-Ex: <ng-content>Conteúdo que aparece no ng-content</ng-content>
+  Ex: <ng-content>Conteúdo que aparece no ng-content</ng-content>
 - Posso inclusive repassar um outro componente ou vários dentro do meu <app-ng-content> que isso será renderizado dentro do <ng-content>.
 - Para identificar o que aparecerá em diversos <ng-content> diferentes, posso repassar nome de classes e ids para indentificá-los.
+
+## Services / Serviços
+
+- São usados para buscar e enviar dados ao servidor.
+- São responsáveis pelas regras de negócio.
+- Úteis para evitar DRY - Don't Repeat Yourself (Código repetido).
+- São responsáveis por ter nossas classes utilitárias. (métodos que podem ser usados em todo o programa).
+- É também uma classe na qual temos os nossos métodos para fazer CRUD (Create, Read, Update, Delete).
+
+### Injeção de Dependência (DI)
+- 
