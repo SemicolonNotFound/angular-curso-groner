@@ -8,9 +8,9 @@ import { Component, OnInit, Input } from "@angular/core";
   // inputs: ['nomeCurso:nome']
 })
 export class InputPropertyComponent implements OnInit {
-  // Com o decorator Input conseguimos expor uma propriedade, nesse caso 'nome',
+  // Com o decorator Input conseguimos expor uma propriedade, nesse caso 'nomeCurso',
   // para o selector desse component. Nesse caso 'app-input-property'.
-  // Podemos também usar a variável internamente como nomeCursoInterno e externamente como nomeCursoExterno.
+  // Podemos também usar a variável internamente como nomeCurso e externamente como nomeCursoExterno.
   @Input("nomeCursoExterno") nomeCurso = "";
   constructor() {}
 
