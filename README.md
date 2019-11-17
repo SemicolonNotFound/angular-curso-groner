@@ -41,3 +41,14 @@
 - Desse modo podemos usar essa propriedade no template e repassar seu valor ao outros components/métodos.
   Ex: @Output() outputProperty = new EventEmitter(); Declaramos uma variável 'valor = 0;' Agora podemos repassar o valor que está sendo recebido aqui para nosso component.
 - Teremos um método então chamando isso. meuMetodo() {this.mudouValor.emit({novoValor: this.valor})}
+
+## Diretivas
+
+- Diretivas Estruturais: São utilizadas para modificar o DOM. (Alterar nosso template) - *ngIf, *ngFor & etc.
+- Diretivas de Atributos: Interagem com o elemento em que foram aplicadas. Por ex. Modificar a classe de objetos e classes. - ng-class, ng-style.
+
+### Diretiva *ngIf
+
+- Executa semelhante ao condicional If que conhecemos. Ira iterar o valor da tag em que for declarado e o executará caso a condição for verdadeira.
+- Se você tiver uma árvore de elementos pequena para exibir, pode usar o elemento [hidden] como alternativa para não sobrecarregar o DOM. Caso passar de 2/3 utilizar ngIf.
+

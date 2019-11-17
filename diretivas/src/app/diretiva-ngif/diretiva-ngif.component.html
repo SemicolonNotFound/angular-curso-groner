@@ -1,0 +1,11 @@
+<h5>Diretiva ngIf</h5>
+
+<div *ngIf="mostrarCursos">
+  Lista de cursos aqui:
+  <li *ngFor="let curso of cursos" >{{ cursos }}</li>
+</div>
+<div *ngIf="!mostrarCursos">
+  Não existem cursos para serem listados.
+</div>
+
+<button (click)="onMostrarCursos()"> Mostrar ou esconder cursos</button>
