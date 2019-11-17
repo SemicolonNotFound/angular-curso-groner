@@ -1,0 +1,31 @@
+<section class="property-binding">
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+
+    <!-- O que está dentro das chaves é renderizado no template (HTML) do componente. -->
+    <p>String renderizada com interpolação: {{ url }}</p>
+
+    <!-- O interpolation também consegue executar cálculos matemáticos -->
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+
+    <!-- Além disso, é possível também invocar métodos dentro do interpolation -->
+    <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+
+    <!-- Podemos inclusive ter duas passagens de parâmetros ou mais dentro do interpolation-->
+    <p>Está gostando do curso? {{ cursoAngular && curtirCurso() }}</p>
+  </article>
+
+  <article>
+    <h3>Property Binding</h3>
+
+    <!-- Trazer imagem com Interpolation -->
+    <img src="{{ urlImagem }}" alt="Imagem de comida" />
+
+    <!-- Property binding para trazer a imagem -->
+    <img [src]="urlImagem" />
+
+    <!-- Muda pouco entre property binding e interpolation. O que diferencia são tags que não possuem
+      properties (value, src, id, name e afins) então terá qu sera usado o interpolation -->
+
+  </article>
+</section>
