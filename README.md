@@ -60,3 +60,14 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
 - Executa semelhante ao laço de repetição 'for' que conhecemos. Ira repetir o laço para cada item presente no meu array.
 - Podemos então exibir item a item o que foi passado pelo laço. Por ex: let item of itens; e colocamos {{ item }} para mostrar todos os itens por vez.
 - Usa-se \*ngFor="let item of items" para criar o laço de repetição. Pode ser aplicado a várias tags, no exemplo usamos um <li>
+
+### Diretiva ng-class/ng-style
+
+- Altera as informações de classe e estilo.
+- Visualizar melhor depois, nada prática de se usar hoje em dia.
+
+### Operador elvis / Safe Navigation Operator
+
+- Serve para evitar erros de null pointer. / valores vindo vazio para o template.
+- Usa-se um '?' ponto de interrogação antes de um atributo/variavel que poderá ser nula.
+  Ex: {{ pessoa.fisica?.endereco?.rua }} como é possivel ver, tem como usá-lo mais de uma vez e aninhar isso em tudo q é recebido.
