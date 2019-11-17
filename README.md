@@ -1,4 +1,4 @@
-# angular-curso-groner
+# Curso de Angular - Loiane Groner
 
 ## Data Binding
  - Interpolation Property: {{ valor }}
