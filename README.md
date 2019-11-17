@@ -71,3 +71,11 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
 - Serve para evitar erros de null pointer. / valores vindo vazio para o template.
 - Usa-se um '?' ponto de interrogação antes de um atributo/variavel que poderá ser nula.
   Ex: {{ pessoa.fisica?.endereco?.rua }} como é possivel ver, tem como usá-lo mais de uma vez e aninhar isso em tudo q é recebido.
+
+### Funcionamento do ng-content
+- Serve com um container de conteúdo que será sobreescrito pelo componente pai.
+Ex: em <app-root> eu declaro meu selector '<app-ng-content>Conteúdo que aparece no ng-content</app-ng-content>' e dentro da tag repasso meu texto de informação.
+- Agora, dentro do template do <app-ng-content> eu adiciono um <ng-content></ng-content>. Meu conteúdo por final aparecerá entre essas tags do ng-content.
+Ex: <ng-content>Conteúdo que aparece no ng-content</ng-content>
+- Posso inclusive repassar um outro componente ou vários dentro do meu <app-ng-content> que isso será renderizado dentro do <ng-content>.
+- Para identificar o que aparecerá em diversos <ng-content> diferentes, posso repassar nome de classes e ids para indentificá-los.
