@@ -1,5 +1,7 @@
 # Curso Completo de Angular
 
+Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimilando durantes as aulas do curso de Angular, afim de fixar o conhecimento e ter um fácil acesso de consulta e esclarecimento de dúvidas.
+
 ## Data Binding
 
 - Interpolation Property: {{ valor }}
@@ -47,8 +49,7 @@
 - Diretivas Estruturais: São utilizadas para modificar o DOM. (Alterar nosso template) - *ngIf, *ngFor & etc.
 - Diretivas de Atributos: Interagem com o elemento em que foram aplicadas. Por ex. Modificar a classe de objetos e classes. - ng-class, ng-style.
 
-### Diretiva *ngIf
+### Diretiva \*ngIf
 
 - Executa semelhante ao condicional If que conhecemos. Ira iterar o valor da tag em que for declarado e o executará caso a condição for verdadeira.
 - Se você tiver uma árvore de elementos pequena para exibir, pode usar o elemento [hidden] como alternativa para não sobrecarregar o DOM. Caso passar de 2/3 utilizar ngIf.
-
