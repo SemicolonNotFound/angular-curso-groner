@@ -6,7 +6,7 @@
 - Event Binding: (evento)="propriedade"
 - Two-way Data Binding: [(ngModel)]="propriedade"
 
-### Interpolation Property - do component para o template.
+### Interpolation Property - Do component para o template.
 - Traz informações do component atráves das chaves.
 - Usa-se chaves {{ valor }} para renderizar no template o valor da variável.
 

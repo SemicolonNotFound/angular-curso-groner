@@ -1,0 +1,9 @@
+<h3>Input/Output Property</h3>
+<!-- Esse Property Binding diz respeito a nossa variável declarada no component
+'app-input-property' e por ser string ela pode receber a nossa variável desse
+component 'app-reusando-components' que é 'nomeDoCurso'. -->
+<app-input-property [nomeCursoExterno]="nomeDoCurso"></app-input-property>
+
+<!-- Repassando um valor fixo não precisa de property binding.
+Valores dinâmicos necessita. Como no caso de repassar uma variável ou trazer o valor por um método.-->
+<app-output-property [valor]="valorInicial" (mudouValor)="onMudouValor($event)" ></app-output-property>
