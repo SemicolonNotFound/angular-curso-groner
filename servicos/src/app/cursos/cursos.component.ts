@@ -9,16 +9,20 @@ import { CursosService } from "./cursos.service";
 })
 export class CursosComponent implements OnInit {
   cursos = [];
-  CursosService: CursosService;
+  cursosServiceVar: CursosService;
 
-  constructor() {
+  constructor(private cursosService: CursosService) {
     // Não queremos fazer essa instanciação manualmente, principalmente se precisarmos passar parâmetros.
     // Isso se tornará muito complexo de declarar futuramente, pois gerará uma cadeia enorme de parâmetros.
-    this.CursosService = new CursosService();
+    // this.cursosService = new CursosService();
+
+    // O correto é fazer instanciando o service como parâmetro do constructor e atribuindo posteriormente ele a uma variavel.
+    this.cursosServiceVar = cursosService;
   }
 
   // Esse é o método que é executado quando essa classe é carregada.
   ngOnInit() {
-    this.cursos = this.CursosService.getCursos();
+    // Como ele é executado iniciando o template. Nós iremos usa-lo para invocar nosso método que retorna os cursos e exibilos na página.
+    this.cursos = this.cursosService.getCursos();
   }
 }

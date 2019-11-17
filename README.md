@@ -90,4 +90,8 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
 - É também uma classe na qual temos os nossos métodos para fazer CRUD (Create, Read, Update, Delete).
 
 ### Injeção de Dependência (DI)
-- 
+- Significa que uma classeA necessita de uma classeB para funcionar.
+Ex: ClasseComponent precisa da ClasseService para poder listar Informações. Ou seja, ClasseComponent tem uma depêndecia na ClasseService para poder funcionar. Nesse caso, se faz necessário instaciar a ClasseService no construtor da nossa ClasseComponent para que essa classe possa funcionar corretamente.
+- Pelo amor de Jeová, não faça instancia de services manualmente em suas classes dependentes.
+- Para informar que uma classe pode ser injetada. Adicionamos o decorator 'Injectable()' acima da declaração da classe. 
+- Quando uma Injectable() é feito manualmente, se faz necessário também adicionar ela como um provider no módulo do componente. Nesse caso 'app.module.ts' dentro de providers: [].
