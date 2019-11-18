@@ -5,7 +5,8 @@ import { CursosService } from "./cursos.service";
 @Component({
   selector: "app-cursos",
   templateUrl: "./cursos.component.html",
-  styleUrls: ["./cursos.component.css"]
+  styleUrls: ["./cursos.component.css"],
+  providers: [CursosService]
 })
 export class CursosComponent implements OnInit {
   cursos = [];
@@ -24,5 +25,14 @@ export class CursosComponent implements OnInit {
   ngOnInit() {
     // Como ele é executado iniciando o template. Nós iremos usa-lo para invocar nosso método que retorna os cursos e exibilos na página.
     this.cursos = this.cursosService.getCursos();
+
+    // Nos inscrevemos no emissor de eventos para que eu seja notificado quando um novo valor for emitido.
+    // Temos abaixo uma Arrow Function. Criamos uma variável local que receberá o valor como parâmetro.
+    // this.cursosService.emitirCursoCriado.subscribe((curso: string) => console.log(curso));
+
+    // Temos acesso direto ao serviço mas não ao atributo emitirCursoCriado pois ele não é estático.
+    CursosService.criouNovoCurso.subscribe((curso: string) =>
+      this.cursos.push(curso) // Iremos adicionar esse curso que foi enviado via EventEmitter a nossa variável array.
+    );
   }
 }

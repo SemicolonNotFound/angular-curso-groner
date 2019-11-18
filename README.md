@@ -95,3 +95,10 @@ Ex: ClasseComponent precisa da ClasseService para poder listar Informações. Ou
 - Pelo amor de Jeová, não faça instancia de services manualmente em suas classes dependentes.
 - Para informar que uma classe pode ser injetada. Adicionamos o decorator 'Injectable()' acima da declaração da classe. 
 - Quando uma Injectable() é feito manualmente, se faz necessário também adicionar ela como um provider no módulo do componente. Nesse caso 'app.module.ts' dentro de providers: [].
+
+### Escopo de Instâncias
+- Singleton: Apenas uma instância da classe para toda a aplicação.
+- Em app.module se usa o BrowserModule e modulo de funcionalidades se usa o CommonModule.
+- Se quiser que o service tenha escopo global, ele deve ser declarado no provider do app.module.ts, senão deve ser instanciado em um provider de um módulo de funcionalidades. Esses módulos de funcionalidades são módulos respectivos dentro da aplicação e que podem ser usados por um determinado número de components que estarão nas 'declarations' desse módulo.
+- Caso queira que um serviçotenha uma instancia separada para determinado component, você o declara logo abaixo do selector com o metadado 'providers: [meuServico];'
+- Usamos o EventEmitter para emitir para outro local alguma coisa. No caso o valor do nosso curso. E no componente fazemos um subscribe para capturar / ouvir esse valor.
