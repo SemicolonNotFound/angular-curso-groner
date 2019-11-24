@@ -107,6 +107,7 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
 - Usamos o EventEmitter para emitir para outro local alguma coisa. No caso o valor do nosso curso. E no componente fazemos um subscribe para capturar / ouvir esse valor.
 
 ## Pipes (Filtros de exibição)
+
 São usados para transformar um valor repassado em um Interpolation dentro do template.
 
 - Pipes fazem parte do pacote 'Commom Module/Browser Module' então não precisamos importar nada para usá-los.
@@ -115,3 +116,20 @@ São usados para transformar um valor repassado em um Interpolation dentro do te
 - Pipe Puro: Não olha as modificações/Atualizações. Pipe impuro, sim.
 - Não filtre arrays com pipe em projetos. Causa perda de desempenho.
 - Pipe Async permite que não gere erros no template quando uma solicitação precisar de um tempo para ser exibida, tal como uma requisição no servidor.
+
+## Routing/Roteamento
+
+SPA são páginas de aplicações únicas onde o a página não é recarregada por completo para mostrar um novo conteúdo, apenas aquela parte específica.
+O roteamento utiliza também as Hashs (url endpoints) para indicar em que parte/componente da aplicação está
+
+### Router outlet
+
+- Router outlet é uma tag que irá servir para substituir o conteúdo que virá da nossa rota na aplicação.
+- Em um arquivo específico nós indicamos quais serão as rotas, repassando o componente/template que será exibido caso estejamos naquela rota.
+- Para navegar entre as rotas nós definimos um routerLink que indica para qual endpoint eu devo ir.
+- routerLinkActive="active" define que um css indicando ativo será adicionado a uma rota ativa.
+
+### Rotas ativas
+
+- ActivatedRoute É um parâmetro injetável no construtor para extrair os parâmetros do roteamento.
+- Os parâmetros das rotas são do tipo Behavior Subject, ou seja, podem alterar e por isso podemos nos inscrever nele.
