@@ -88,17 +88,30 @@ Abaixo ficará um sumário explicativo com tudo que eu for aprendendo e assimila
 - Úteis para evitar DRY - Don't Repeat Yourself (Código repetido).
 - São responsáveis por ter nossas classes utilitárias. (métodos que podem ser usados em todo o programa).
 - É também uma classe na qual temos os nossos métodos para fazer CRUD (Create, Read, Update, Delete).
+- Serviços podem SIM, ser injetados dentro de outros serviços. Isso acontece em casos de serviços utilitários serem injetados em serviços específicos.
 
 ### Injeção de Dependência (DI)
+
 - Significa que uma classeA necessita de uma classeB para funcionar.
-Ex: ClasseComponent precisa da ClasseService para poder listar Informações. Ou seja, ClasseComponent tem uma depêndecia na ClasseService para poder funcionar. Nesse caso, se faz necessário instaciar a ClasseService no construtor da nossa ClasseComponent para que essa classe possa funcionar corretamente.
+  Ex: ClasseComponent precisa da ClasseService para poder listar Informações. Ou seja, ClasseComponent tem uma depêndecia na ClasseService para poder funcionar. Nesse caso, se faz necessário instaciar a ClasseService no construtor da nossa ClasseComponent para que essa classe possa funcionar corretamente.
 - Pelo amor de Jeová, não faça instancia de services manualmente em suas classes dependentes.
-- Para informar que uma classe pode ser injetada. Adicionamos o decorator 'Injectable()' acima da declaração da classe. 
+- Para informar que uma classe pode ser injetada. Adicionamos o decorator 'Injectable()' acima da declaração da classe.
 - Quando uma Injectable() é feito manualmente, se faz necessário também adicionar ela como um provider no módulo do componente. Nesse caso 'app.module.ts' dentro de providers: [].
 
 ### Escopo de Instâncias
+
 - Singleton: Apenas uma instância da classe para toda a aplicação.
 - Em app.module se usa o BrowserModule e modulo de funcionalidades se usa o CommonModule.
 - Se quiser que o service tenha escopo global, ele deve ser declarado no provider do app.module.ts, senão deve ser instanciado em um provider de um módulo de funcionalidades. Esses módulos de funcionalidades são módulos respectivos dentro da aplicação e que podem ser usados por um determinado número de components que estarão nas 'declarations' desse módulo.
 - Caso queira que um serviçotenha uma instancia separada para determinado component, você o declara logo abaixo do selector com o metadado 'providers: [meuServico];'
 - Usamos o EventEmitter para emitir para outro local alguma coisa. No caso o valor do nosso curso. E no componente fazemos um subscribe para capturar / ouvir esse valor.
+
+## Pipes (Filtros de exibição)
+São usados para transformar um valor repassado em um Interpolation dentro do template.
+
+- Pipes fazem parte do pacote 'Commom Module/Browser Module' então não precisamos importar nada para usá-los.
+- Pipes criados precisam ser importados no módulo de onde ele será usado.
+- Locale é uma forma de internacionalizar os Pipes (por exemplo substituir o ponto por vírgula no dinheiro) pois é assim que funciona no Brasil.
+- Pipe Puro: Não olha as modificações/Atualizações. Pipe impuro, sim.
+- Não filtre arrays com pipe em projetos. Causa perda de desempenho.
+- Pipe Async permite que não gere erros no template quando uma solicitação precisar de um tempo para ser exibida, tal como uma requisição no servidor.

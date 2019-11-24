@@ -1,2 +1,2 @@
-// Irá exibir apenas se existir um curso.
-<p *ngIf="curso">O Último curso criado foi: {{ curso }}</p>
+<!-- Irá exibir apenas se existir um curso e ele for diferente de vazio e maior que 3 caracteres.-->
+<p *ngIf="curso && curso!=='' && curso.length >= 3">O Último curso criado foi: {{ curso }}</p>

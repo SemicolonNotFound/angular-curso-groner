@@ -1,3 +1,4 @@
+import { LogService } from "./../shared/log.service";
 import { EventEmitter, Injectable } from "@angular/core";
 
 // Com o decorator abaixo 'Injectable()' nos dizemos ao Angular que essa é uma classe injetável.
@@ -14,18 +15,25 @@ export class CursosService {
   // O objetivo é passar apenas o nome do curso criado, que no caso é uma string, por isso está tipado como tal.
   emitirCursoCriado = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private logService: LogService) {
     console.log("CursosService");
   }
 
   private cursos = ["Angular", "Java", "Ionic"];
 
   public getCursos() {
+    // Invocando nosso método logService e repassando nossa mensagem do tipo string como foi declarado como parâmetro.
+    this.logService.consoleLog("Obtendo lista de cursos!");
+
     //  Fizemos o refactoring para que nossas infos fiquem protegidas e possam ser acessadas apenas pelo método e não diretamente.
     return this.cursos;
   }
 
   public addCurso(curso: string) {
+    // Invocando nosso método logService e repassando nossa mensagem do tipo string como foi declarado como parâmetro.
+    // A string abaixo está com o template literals. Permitindo reduzir as concatenações.
+    this.logService.consoleLog(`O novo curso criado foi ${curso}`);
+
     // Adiciona a minha lista de cursos. Meu array de cursos. O parâmetro passado. Nesse caso um curso, do tipo string.
     this.cursos.push(curso);
 
